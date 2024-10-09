@@ -4,7 +4,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    flex-wrap: wrap;
     height: 100vh;
     margin: 0;
 }
@@ -23,7 +22,8 @@ h1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    width: 80%; /* Para melhor centralização */
+    width: 80%;
+    margin: 0 auto; /* Centraliza o grid */
 }
 
 .flashcard {
@@ -34,6 +34,7 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center; /* Centraliza o texto dentro da flashcard */
 }
 
 .question {
