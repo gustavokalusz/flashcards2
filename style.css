@@ -20,9 +20,10 @@ h1 {
 }
 
 .flashcards {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    width: 80%; /* Para melhor centralização */
 }
 
 .flashcard {
