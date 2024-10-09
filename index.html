@@ -14,12 +14,25 @@
             <div class="answer" id="answer">Paris</div>
         </div>
         <button id="toggle">Mostrar Resposta</button>
+        <button id="next">Próximo</button>
     </div>
 
     <script>
+        const flashcards = [
+            { question: "Qual é a capital da França?", answer: "Paris" },
+            { question: "Qual é a capital do Brasil?", answer: "Brasília" },
+            { question: "Qual é a capital da Espanha?", answer: "Madri" },
+            { question: "Qual é a capital da Itália?", answer: "Roma" },
+            { question: "Qual é a capital da Alemanha?", answer: "Berlim" },
+            { question: "Qual é a capital do Japão?", answer: "Tóquio" },
+        ];
+
+        let currentCard = 0;
         const flashcard = document.getElementById('flashcard');
+        const question = document.getElementById('question');
         const answer = document.getElementById('answer');
         const toggleButton = document.getElementById('toggle');
+        const nextButton = document.getElementById('next');
 
         answer.style.display = 'none'; // Ocultar a resposta inicialmente
 
@@ -31,6 +44,14 @@
                 answer.style.display = 'none';
                 toggleButton.textContent = 'Mostrar Resposta';
             }
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentCard = (currentCard + 1) % flashcards.length;
+            question.textContent = flashcards[currentCard].question;
+            answer.textContent = flashcards[currentCard].answer;
+            answer.style.display = 'none'; // Esconder resposta ao mudar de pergunta
+            toggleButton.textContent = 'Mostrar Resposta';
         });
     </script>
 </body>
