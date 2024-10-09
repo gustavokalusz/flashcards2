@@ -3,17 +3,26 @@ body {
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
     height: 100vh;
     margin: 0;
 }
 
 .container {
     text-align: center;
+    margin-top: 20px;
 }
 
 h1 {
     color: #333;
+    margin-bottom: 20px;
+}
+
+.flashcards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .flashcard {
@@ -22,7 +31,8 @@ h1 {
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .question {
@@ -34,19 +44,4 @@ h1 {
     font-size: 20px;
     color: #f44336;
     margin-top: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-button:hover {
-    background-color: #45a049;
 }
